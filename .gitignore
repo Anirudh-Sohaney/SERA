@@ -1,0 +1,9 @@
+# Source data (too large for GitHub; transferred separately)
+extraction/data/processed/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Run logs
+extraction/data/final/*.log

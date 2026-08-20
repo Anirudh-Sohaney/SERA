@@ -1,0 +1,33 @@
+{
+  "prompt_output": {
+    "path": "data/processed/prompts/wildchat_english_user_messages.jsonl",
+    "records": 980259,
+    "bytes": 1738838481,
+    "sha256": "5685275b8f7d4839370739f62fa19150097f4c608b9ad34e758006e178f25403",
+    "filter": "source language metadata exactly English; role exactly user; non-empty text; mixed-language/mislabeled content is not independently detected"
+  },
+  "conversation_output": {
+    "path": "data/processed/conversations/oasst2_english_conversations.jsonl",
+    "conversations": 32687,
+    "messages": 121961,
+    "bytes": 69189836,
+    "sha256": "66cf65ff77f4cbee5d6c62a3725267f2c8251a5b61bac508eb8084a8f1e8fd5d",
+    "filter": "OASST2 ready trees; root and every retained message lang exactly en; valid alternating user/assistant root-to-leaf branches; any node marked synthetic=true excluded; unique tree-and-branch conversation IDs"
+  },
+  "sources": {
+    "wildchat_dataset": "https://huggingface.co/datasets/allenai/WildChat-1M",
+    "wildchat_revision": "7d6490e462285cf85d91eabea0f9a954fbddcd1f",
+    "oasst2_dataset": "https://huggingface.co/datasets/OpenAssistant/oasst2",
+    "oasst2_revision": "179dd21fc55192153d94adb0e0ce8f69e222bf75",
+    "oasst2_license": "Apache-2.0 (as identified by the upstream dataset metadata)",
+    "kaggle_reviewed": "https://www.kaggle.com/datasets/abhayayare/multi-turn-chatbot-conversation-dataset",
+    "kaggle_decision": "Not downloaded: its description attributes the dialogues to programmatic generation, so it was excluded from the real-user-oriented collection."
+  },
+  "note": "The prompt file contains individual user messages. The conversation file contains full English root-to-leaf conversations with user and assistant turns. Human authorship is source-described, not independently provable from text.",
+  "kaggle_review": {
+    "dataset": "abhayayare/multi-turn-chatbot-conversation-dataset",
+    "url": "https://www.kaggle.com/datasets/abhayayare/multi-turn-chatbot-conversation-dataset",
+    "status": "reviewed_not_downloaded",
+    "reason": "description attributes dialogues to programmatic generation; excluded from real-user-oriented collection"
+  }
+}
