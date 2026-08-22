@@ -158,6 +158,18 @@ def process_conversation(
             violation_counts[v] += 1
 
         ptype = extraction.classify_type(state, parsed)
+
+        # Skip records whose output has null fields for project-bearing
+        # types: the model returned a degenerate state (e.g. for a prompt
+        # with no project content). Writing them would fail the independent
+        # milestone check. Do not carry the degenerate state forward.
+        if ptype in ("new", "update", "no_change") and any(
+            parsed.get(k) is None for k in ("project_overview", "specs", "design")
+        ):
+            violation_counts["null_output_skipped"] += 1
+            turn += 1
+            continue
+
         if ptype != "no_project" or keep_no_project:
             records.append(
                 {

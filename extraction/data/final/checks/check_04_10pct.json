@@ -1,0 +1,18 @@
+{
+  "ok": false,
+  "total_records": 26153,
+  "type_counts": {
+    "no_project": 24156,
+    "new": 1064,
+    "no_change": 623,
+    "update": 310
+  },
+  "unique_conversations": 13117,
+  "error_count": 3,
+  "errors": [
+    "line 20194: null output field for type=new",
+    "line 20200: null output field for type=new",
+    "line 20202: null output field for type=new"
+  ],
+  "line_errors": []
+}

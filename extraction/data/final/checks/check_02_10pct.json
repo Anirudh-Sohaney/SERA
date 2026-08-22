@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "total_records": 13078,
+  "type_counts": {
+    "no_project": 12150,
+    "new": 486,
+    "no_change": 263,
+    "update": 179
+  },
+  "unique_conversations": 6547,
+  "error_count": 0,
+  "errors": [],
+  "line_errors": []
+}

@@ -1,0 +1,40 @@
+=== SUPERVISION LOG ===
+2026-08-20 04:05:40 UTC | FOUND generation process DEAD (no generate_dataset.py running; last write 04:01:15). No generation log existed. Checkpoint consistent: 653 processed / 1298 records written. Rate limit OK (allowed=True). Restarted with --resume.
+2026-08-20 04:05:40 UTC | RESTARTED: PID 543925, workers=6, --keep-no-project --all-branches --resume --rate-limit-check-every 25. Log: final/generation_full.log. Expected 65389 records, 32034 conversations queued.
+2026-08-20 04:31:40 UTC | STATUS: PID 543925 alive, 2429 records, 1203 conversations, 0 tracebacks, rate-limited but steady ~0.35 conv/s
+2026-08-20 04:52:05 UTC | STATUS: PID 543925 alive, 3319 records, 1653 conversations, 0 tracebacks, ~0.37 conv/s steady
+2026-08-20 05:17:35 UTC | STATUS: PID 543925 alive, 4466 records, 2228 conversations, 0 tracebacks, ~0.37 conv/s steady
+2026-08-20 05:42:55 UTC | STATUS: PID 543925 alive, 5656 records, 2828 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 06:08:32 UTC | STATUS: PID 543925 alive, 6837 records, 3428 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 06:23:45 UTC | STATUS: PID 543925 alive, 7506 records, 3753 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 06:39:00 UTC | STATUS: PID 543925 alive, 8225 records, 4128 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 06:54:25 UTC | STATUS: PID 543925 alive, 8897 records, 4453 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 07:09:35 UTC | STATUS: PID 543925 alive, 9596 records, 4778 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 07:24:52 UTC | STATUS: PID 543925 alive, 10291 records, 5128 conversations, 0 tracebacks, ~0.38 conv/s steady. 10k milestone passed.
+2026-08-20 07:40:25 UTC | STATUS: PID 543925 alive, 11058 records, 5528 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 07:55:38 UTC | STATUS: PID 543925 alive, 11740 records, 5878 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 08:10:50 UTC | STATUS: PID 543925 alive, 12395 records, 6203 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 08:26:00 UTC | STATUS: PID 543925 alive, 13105 records, 6553 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 08:41:15 UTC | STATUS: PID 543925 alive, 13738 records, 6878 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 08:56:30 UTC | STATUS: PID 543925 alive, 14442 records, 7228 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 09:11:45 UTC | STATUS: PID 543925 alive, 15150 records, 7578 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 09:26:55 UTC | STATUS: PID 543925 alive, 15807 records, 7928 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 09:42:05 UTC | STATUS: PID 543925 alive, 16529 records, 8278 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 09:57:25 UTC | STATUS: PID 543925 alive, 17230 records, 8628 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 10:12:42 UTC | STATUS: PID 543925 alive, 17913 records, 8978 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 10:27:55 UTC | STATUS: PID 543925 alive, 18604 records, 9328 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 10:43:02 UTC | STATUS: PID 543925 alive, 19281 records, 9653 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 10:58:30 UTC | STATUS: PID 543925 alive, 20004 records, 10028 conversations, 0 tracebacks, ~0.38 conv/s steady. 20k milestone passed.
+2026-08-20 11:13:42 UTC | STATUS: PID 543925 alive, 20749 records, 10403 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 11:28:55 UTC | STATUS: PID 543925 alive, 21383 records, 10728 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 11:44:05 UTC | STATUS: PID 543925 alive, 22068 records, 11053 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 11:59:22 UTC | STATUS: PID 543925 alive, 22763 records, 11403 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 12:14:40 UTC | STATUS: PID 543925 alive, 23492 records, 11778 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 12:29:50 UTC | STATUS: PID 543925 alive, 24212 records, 12128 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 12:40:00 UTC | STATUS: PID 543925 alive, 24718 records, 12403 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 12:50:20 UTC | STATUS: PID 543925 alive, 25192 records, 12628 conversations, 0 tracebacks, ~0.38 conv/s steady. 25k milestone passed.
+2026-08-20 13:05:32 UTC | STATUS: PID 543925 alive, 25928 records, 13003 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 13:20:50 UTC | STATUS: PID 543925 alive, 26638 records, 13353 conversations, 0 tracebacks, ~0.38 conv/s steady
+2026-08-20 17:55:00 UTC | INTERVENTION: check_06 (60% milestone) found 4 errors (null output fields, type=new) at lines 20194/20200/20202/31753 (convs 4f8c85ac-...:7/:9/:10, 7d183cac-...:0). Root cause: LLM returned degenerate outputs (e.g. {'project_overview':'c4','specs':None,'design':None}) for garbage prompts ('2. c4'); generator wrote records despite validate_output violations. FIXED: (1) patched generate_dataset.py to skip records with null output fields for new/update/no_change (takes effect on restart); (2) removed the 4 bad records from dataset.jsonl (39556->39552 lines, inode-preserving rewrite while process running; verified 0 JSON errors, no duplicates). Re-ran check: CLEAN (39632 records, 0 errors). Generator PID 543925 alive, appending correctly. NOTE: checkpoint records_written now 4 ahead of file lines (cosmetic); final count will be ~65385 (4 degenerate records dropped).
+2026-08-20 20:42:50 UTC | STATUS: PID 543925 alive, 47647 records, 23828 conversations, 0 tracebacks, ~0.39 conv/s steady
+2026-08-20 21:33:50 UTC | STATUS: PID 543925 alive, 50129 records (50k crossed), 25078 conversations, 0 tracebacks, ~0.39 conv/s steady
