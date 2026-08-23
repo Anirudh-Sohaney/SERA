@@ -1,0 +1,12 @@
+{
+  "total_records": 65377,
+  "kept": 7251,
+  "dropped": 58126,
+  "kept_pct": 11.09,
+  "invalid_parses": 0,
+  "elapsed_seconds": 81906.0,
+  "output": "/home/ubuntu/sera_models/extraction/data/final/dataset_coding.jsonl",
+  "model": "gpt-5.6-luna",
+  "reasoning": "low",
+  "temperature": null
+}

@@ -143,6 +143,7 @@ async def _ws_complete(
     reasoning: str,
     token: str,
     timeout: float = 300.0,
+    temperature: Optional[float] = None,
 ) -> CompletionResult:
     """Run one Responses-API turn over the Codex WebSocket."""
     headers = {
@@ -160,6 +161,8 @@ async def _ws_complete(
         "reasoning": {"effort": reasoning},
         "stream": True,
     }
+    if temperature is not None:
+        frame["temperature"] = temperature
     text_parts: list[str] = []
     response_id: Optional[str] = None
     usage: Optional[dict[str, Any]] = None
@@ -204,6 +207,7 @@ def complete(
     reasoning: str = DEFAULT_REASONING,
     max_retries: int = 3,
     timeout: float = 300.0,
+    temperature: Optional[float] = None,
 ) -> CompletionResult:
     """Synchronous completion helper with retry and token refresh."""
     last_err: Optional[Exception] = None
@@ -211,7 +215,8 @@ def complete(
         try:
             token = get_access_token()
             return asyncio.run(
-                _ws_complete(messages, model, reasoning, token, timeout=timeout)
+                _ws_complete(messages, model, reasoning, token, timeout=timeout,
+                             temperature=temperature)
             )
         except (AuthError, APIError) as e:
             last_err = e

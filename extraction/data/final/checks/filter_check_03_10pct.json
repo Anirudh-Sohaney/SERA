@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "label": "filter_check_03_10pct",
+  "classified": 19611,
+  "total": 65377,
+  "progress_pct": 30.0,
+  "kept_ones": 2106,
+  "dropped_zeros": 17505,
+  "malformed_lines": 0,
+  "error_count": 0,
+  "errors": []
+}
