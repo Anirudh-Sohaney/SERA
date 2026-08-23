@@ -1,11 +1,9 @@
-# Source data (too large for GitHub; transferred separately)
-extraction/data/processed/
-
 # Python cache
 __pycache__/
 *.pyc
 
-# Run logs
-extraction/data/final/*.log
 # opencode session state
 .opencode/
+
+# run logs (reports live in *.md and checks/*.json)
+extraction/data/final/*.log
