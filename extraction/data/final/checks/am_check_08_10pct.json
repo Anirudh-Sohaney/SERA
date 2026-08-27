@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "label": "am_check_08_10pct",
+  "processed": 30400,
+  "total": 38000,
+  "classified_coding": 16937,
+  "records_in_decisions": 16937,
+  "records_in_dataset": 0,
+  "error_count": 0,
+  "errors": []
+}

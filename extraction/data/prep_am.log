@@ -1,0 +1,135 @@
+[code] code_r1_1pass: total=200,866 target=20,000 (54 blocks x 500)
+  block 1/54 offset=       0 rows=500 kept_so_far=500
+  block 2/54 offset=   3,780 rows=500 kept_so_far=1000
+  block 3/54 offset=   7,560 rows=500 kept_so_far=1500
+  block 4/54 offset=  11,341 rows=500 kept_so_far=2000
+  block 5/54 offset=  15,121 rows=500 kept_so_far=2500
+  block 6/54 offset=  18,902 rows=500 kept_so_far=3000
+  block 7/54 offset=  22,682 rows=500 kept_so_far=3500
+  block 8/54 offset=  26,463 rows=500 kept_so_far=4000
+  block 9/54 offset=  30,243 rows=500 kept_so_far=4500
+  retry 1/6 at offset 34324: HTTP Error 429: Too Many Requests; waiting 10s
+  retry 2/6 at offset 34324: HTTP Error 429: Too Many Requests; waiting 20s
+  retry 3/6 at offset 34324: HTTP Error 429: Too Many Requests; waiting 40s
+  block 10/54 offset=  34,024 rows=500 kept_so_far=5000
+  block 11/54 offset=  37,804 rows=500 kept_so_far=5500
+  block 12/54 offset=  41,585 rows=500 kept_so_far=6000
+  block 13/54 offset=  45,365 rows=500 kept_so_far=6500
+  block 14/54 offset=  49,146 rows=500 kept_so_far=7000
+  block 15/54 offset=  52,926 rows=500 kept_so_far=7500
+  block 16/54 offset=  56,707 rows=500 kept_so_far=8000
+  block 17/54 offset=  60,487 rows=500 kept_so_far=8500
+  block 18/54 offset=  64,268 rows=500 kept_so_far=8999
+  block 19/54 offset=  68,048 rows=500 kept_so_far=9499
+  block 20/54 offset=  71,829 rows=500 kept_so_far=9999
+  block 21/54 offset=  75,609 rows=500 kept_so_far=10499
+  retry 1/6 at offset 79490: HTTP Error 429: Too Many Requests; waiting 10s
+  retry 2/6 at offset 79490: HTTP Error 429: Too Many Requests; waiting 20s
+  retry 3/6 at offset 79490: HTTP Error 429: Too Many Requests; waiting 40s
+  block 22/54 offset=  79,390 rows=500 kept_so_far=10999
+  block 23/54 offset=  83,170 rows=500 kept_so_far=11498
+  block 24/54 offset=  86,951 rows=500 kept_so_far=11997
+  block 25/54 offset=  90,731 rows=500 kept_so_far=12497
+  block 26/54 offset=  94,512 rows=500 kept_so_far=12997
+  block 27/54 offset=  98,292 rows=500 kept_so_far=13497
+  block 28/54 offset= 102,073 rows=500 kept_so_far=13997
+  block 29/54 offset= 105,853 rows=500 kept_so_far=14497
+  block 30/54 offset= 109,634 rows=500 kept_so_far=14996
+  block 31/54 offset= 113,414 rows=500 kept_so_far=15496
+  block 32/54 offset= 117,195 rows=500 kept_so_far=15996
+  retry 1/6 at offset 121375: HTTP Error 429: Too Many Requests; waiting 10s
+  retry 2/6 at offset 121375: HTTP Error 429: Too Many Requests; waiting 20s
+  retry 3/6 at offset 121375: HTTP Error 429: Too Many Requests; waiting 40s
+  block 33/54 offset= 120,975 rows=500 kept_so_far=16495
+  block 34/54 offset= 124,756 rows=500 kept_so_far=16995
+  block 35/54 offset= 128,536 rows=500 kept_so_far=17495
+  block 36/54 offset= 132,317 rows=500 kept_so_far=17995
+  block 37/54 offset= 136,097 rows=500 kept_so_far=18495
+  block 38/54 offset= 139,878 rows=500 kept_so_far=18995
+  block 39/54 offset= 143,658 rows=500 kept_so_far=19495
+  block 40/54 offset= 147,439 rows=500 kept_so_far=19995
+  block 41/54 offset= 151,219 rows=500 kept_so_far=20495
+  block 42/54 offset= 155,000 rows=500 kept_so_far=20995
+  block 43/54 offset= 158,780 rows=500 kept_so_far=21495
+  block 44/54 offset= 162,561 rows=500 kept_so_far=21995
+  block 45/54 offset= 166,341 rows=500 kept_so_far=22495
+  retry 1/6 at offset 170222: HTTP Error 429: Too Many Requests; waiting 10s
+  retry 2/6 at offset 170222: HTTP Error 429: Too Many Requests; waiting 20s
+  retry 3/6 at offset 170222: HTTP Error 429: Too Many Requests; waiting 40s
+  block 46/54 offset= 170,122 rows=500 kept_so_far=22995
+  block 47/54 offset= 173,902 rows=500 kept_so_far=23495
+  block 48/54 offset= 177,683 rows=500 kept_so_far=23995
+  block 49/54 offset= 181,463 rows=500 kept_so_far=24495
+  block 50/54 offset= 185,244 rows=500 kept_so_far=24995
+  block 51/54 offset= 189,024 rows=500 kept_so_far=25495
+  block 52/54 offset= 192,805 rows=500 kept_so_far=25995
+  block 53/54 offset= 196,585 rows=500 kept_so_far=26495
+  block 54/54 offset= 200,366 rows=500 kept_so_far=26995
+[code] kept 20,000 (dropped 0 dups)
+[math] math_r1_1pass: total=413,062 target=12,000 (32 blocks x 500)
+  block 1/32 offset=       0 rows=500 kept_so_far=500
+  block 2/32 offset=  13,308 rows=500 kept_so_far=999
+  retry 1/6 at offset 26716: HTTP Error 429: Too Many Requests; waiting 10s
+  retry 2/6 at offset 26716: HTTP Error 429: Too Many Requests; waiting 20s
+  retry 3/6 at offset 26716: HTTP Error 429: Too Many Requests; waiting 40s
+  block 3/32 offset=  26,616 rows=500 kept_so_far=1498
+  block 4/32 offset=  39,925 rows=500 kept_so_far=1998
+  block 5/32 offset=  53,233 rows=500 kept_so_far=2498
+  block 6/32 offset=  66,542 rows=500 kept_so_far=2997
+  block 7/32 offset=  79,850 rows=500 kept_so_far=3497
+  block 8/32 offset=  93,159 rows=500 kept_so_far=3997
+  block 9/32 offset= 106,467 rows=500 kept_so_far=4497
+  block 10/32 offset= 119,776 rows=500 kept_so_far=4997
+  retry 1/6 at offset 133484: HTTP Error 502: Bad Gateway; waiting 10s
+  retry 2/6 at offset 133484: HTTP Error 429: Too Many Requests; waiting 20s
+  retry 3/6 at offset 133484: HTTP Error 429: Too Many Requests; waiting 40s
+  block 11/32 offset= 133,084 rows=500 kept_so_far=5497
+  block 12/32 offset= 146,392 rows=500 kept_so_far=5997
+  block 13/32 offset= 159,701 rows=500 kept_so_far=6497
+  block 14/32 offset= 173,009 rows=500 kept_so_far=6997
+  block 15/32 offset= 186,318 rows=500 kept_so_far=7496
+  block 16/32 offset= 199,626 rows=500 kept_so_far=7993
+  block 17/32 offset= 212,935 rows=500 kept_so_far=8492
+  block 18/32 offset= 226,243 rows=500 kept_so_far=8992
+  block 19/32 offset= 239,552 rows=500 kept_so_far=9492
+  block 20/32 offset= 252,860 rows=500 kept_so_far=9991
+  block 21/32 offset= 266,169 rows=500 kept_so_far=10490
+  block 22/32 offset= 279,477 rows=500 kept_so_far=10990
+  retry 1/6 at offset 292885: HTTP Error 429: Too Many Requests; waiting 10s
+  retry 2/6 at offset 292885: HTTP Error 429: Too Many Requests; waiting 20s
+  retry 3/6 at offset 292885: HTTP Error 429: Too Many Requests; waiting 40s
+  block 23/32 offset= 292,785 rows=500 kept_so_far=11489
+  block 24/32 offset= 306,094 rows=500 kept_so_far=11989
+  block 25/32 offset= 319,402 rows=500 kept_so_far=12489
+  block 26/32 offset= 332,711 rows=500 kept_so_far=12989
+  block 27/32 offset= 346,019 rows=500 kept_so_far=13488
+  block 28/32 offset= 359,328 rows=500 kept_so_far=13988
+  block 29/32 offset= 372,636 rows=500 kept_so_far=14488
+  block 30/32 offset= 385,945 rows=500 kept_so_far=14988
+  block 31/32 offset= 399,253 rows=500 kept_so_far=15488
+  block 32/32 offset= 412,562 rows=500 kept_so_far=15988
+[math] kept 12,000 (dropped 0 dups)
+[if] if_r1_1pass: total=76,520 target=6,000 (16 blocks x 500)
+  block 1/16 offset=       0 rows=500 kept_so_far=495
+  block 2/16 offset=   5,068 rows=500 kept_so_far=986
+  block 3/16 offset=  10,136 rows=500 kept_so_far=1481
+  block 4/16 offset=  15,204 rows=500 kept_so_far=1979
+  retry 1/6 at offset 20672: HTTP Error 429: Too Many Requests; waiting 10s
+  retry 2/6 at offset 20672: HTTP Error 429: Too Many Requests; waiting 20s
+  retry 3/6 at offset 20672: HTTP Error 429: Too Many Requests; waiting 40s
+  block 5/16 offset=  20,272 rows=500 kept_so_far=2477
+  block 6/16 offset=  25,340 rows=500 kept_so_far=2973
+  block 7/16 offset=  30,408 rows=500 kept_so_far=3469
+  block 8/16 offset=  35,476 rows=500 kept_so_far=3964
+  block 9/16 offset=  40,544 rows=500 kept_so_far=4459
+  block 10/16 offset=  45,612 rows=500 kept_so_far=4955
+  block 11/16 offset=  50,680 rows=500 kept_so_far=5445
+  block 12/16 offset=  55,748 rows=500 kept_so_far=5941
+  block 13/16 offset=  60,816 rows=500 kept_so_far=6433
+  block 14/16 offset=  65,884 rows=500 kept_so_far=6930
+  block 15/16 offset=  70,952 rows=500 kept_so_far=7424
+  block 16/16 offset=  76,020 rows=500 kept_so_far=7919
+[if] kept 6,000 (dropped 0 dups)
+
+WROTE 38,000 prompts -> /home/ubuntu/sera_models/extraction/data/processed/am_prompts.jsonl
+by domain: {'code': 20000, 'math': 12000, 'if': 6000}

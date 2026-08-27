@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "label": "am_final",
+  "processed": 38000,
+  "total": 38000,
+  "classified_coding": 21127,
+  "records_in_decisions": 21127,
+  "records_in_dataset": 21127,
+  "error_count": 0,
+  "errors": []
+}

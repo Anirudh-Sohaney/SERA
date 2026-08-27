@@ -1,0 +1,15 @@
+{
+  "total_prompts": 38000,
+  "classified_coding": 21127,
+  "classified_pct": 55.6,
+  "records_kept": 21127,
+  "record_types": {
+    "new": 19919,
+    "no_project": 1208
+  },
+  "elapsed_seconds": 71138.2,
+  "output": "/home/ubuntu/sera_models/extraction/data/final/am_dataset_coding.jsonl",
+  "model": "gpt-5.6-luna",
+  "cls_reasoning": "low",
+  "ext_reasoning": "medium"
+}
