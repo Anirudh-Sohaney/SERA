@@ -1,0 +1,195 @@
+{
+  "non_extractive_categories": {
+    "paraphrase": 106,
+    "inferred_requirement": 612,
+    "partial_summary": 116
+  },
+  "non_extractive_total": 834,
+  "extractive_total": 22074,
+  "augmentation_examples": 162,
+  "sample_non_extractive": [
+    {
+      "prompt": "I get an error when I have mp3 files but it works for wav files. Can you make it work for mp3 files too?",
+      "output_overview": "Python code lists mp3 and wav audio files in a directory quickly",
+      "output_specs": {
+        "language": "Python",
+        "purpose": "list all audio files",
+        "location": "directory",
+        "speed": "seconds",
+        "formats": "mp3 and wav"
+      },
+      "output_design": [
+        "audio files in directory",
+        "lists all files quickly",
+        "works for mp3 files too"
+      ],
+      "category": "paraphrase",
+      "technologies": {}
+    },
+    {
+      "prompt": "I don't want to use C, it's too easy to make stupid mistakes, could I use a more modern language that could still integrate with git, like Rust or Zig?",
+      "output_overview": "Program run locally on developer's computer displaying git commits in real time",
+      "output_specs": {
+        "runtime": "locally",
+        "computer": "developer's computer",
+        "display": "window",
+        "representation": "visual representation",
+        "data": "git commits",
+        "updates": "real time",
+        "language": "Rust or Zig; C excluded"
+      },
+      "output_design": [
+        "window displays visual representation",
+        "visual representation of git commits",
+        "git commits in real time"
+      ],
+      "category": "paraphrase",
+      "technologies": {
+        "rust": "language"
+      }
+    },
+    {
+      "prompt": "When I tried running that code the first time, the page refreshed as soon as I hit the \"Add Task\" button, immediately losing the first task I tried to give it. After that it seemed to work ok.\n\nCould you fix the above bug, and also add the ability to check off completed tasks?",
+      "output_overview": "Extremely simple To-do-list web application with task completion checkboxes and Add Task button",
+      "output_specs": {
+        "type": "web application",
+        "complexity": "extremely simple",
+        "technologies": "HTML, CSS, and JavaScript",
+        "Add Task behavior": "prevent page refresh",
+        "completed tasks": "can be checked off"
+      },
+      "output_design": [
+        "To-do-list web application",
+        "HTML CSS and JavaScript",
+        "Add Task prevents page refresh",
+        "completed tasks can be checked off"
+      ],
+      "category": "paraphrase",
+      "technologies": {}
+    },
+    {
+      "prompt": "When I tried running that code the first time, the page refreshed as soon as I hit the \"Add Task\" button, immediately losing the first task I tried to give it. After that it seemed to work ok.\n\nCould you fix the above bug, and also add the ability to check off completed tasks?",
+      "output_overview": "Extremely simple To-do-list web application built in HTML, CSS, and JavaScript",
+      "output_specs": {
+        "technologies": "HTML, CSS, and JavaScript",
+        "complexity": "extremely simple",
+        "Add Task button": "does not refresh page",
+        "completed tasks": "can be checked off"
+      },
+      "output_design": [
+        "To-do-list web application",
+        "HTML, CSS, and JavaScript",
+        "Add Task prevents page refresh",
+        "completed tasks can be checked off"
+      ],
+      "category": "paraphrase",
+      "technologies": {}
+    },
+    {
+      "prompt": "Good, now I can check tasks as completed. Would be nice to have it crossed over when I tick the checkbox.\n\nBut the bug remains: the very first time I'm trying to add a task, the page refreshes and the task disappears. Try again to fix this!",
+      "output_overview": "Extremely simple To-do-list web application built in HTML, CSS, and JavaScript",
+      "output_specs": {
+        "technologies": "HTML, CSS, and JavaScript",
+        "complexity": "extremely simple",
+        "Add Task button": "does not refresh page, including first task",
+        "completed tasks": "can be checked off and crossed over"
+      },
+      "output_design": [
+        "To-do-list web application",
+        "Add Task prevents page refresh",
+        "first task addition prevents refresh",
+        "checked tasks are crossed over"
+      ],
+      "category": "paraphrase",
+      "technologies": {}
+    },
+    {
+      "prompt": "Can you make the first approach into a to-do list with hierarchical to do items, where additional smaller ones are parts of the bigger ones?",
+      "output_overview": "Project to train a large language model understanding and respond human questions",
+      "output_specs": {
+        "task": "train a large language model",
+        "capability": "understanding and respond to human questions",
+        "format": "hierarchical to-do list",
+        "item structure": "smaller items are parts of bigger ones"
+      },
+      "output_design": [
+        "large language model training",
+        "human questions responses",
+        "bigger items contain smaller ones"
+      ],
+      "category": "paraphrase",
+      "technologies": {}
+    },
+    {
+      "prompt": "Thanks, can you add comments to the functions so it will be easier to maintain the code in the future?",
+      "output_overview": "Python code for a rotating square with maintainable function comments",
+      "output_specs": {
+        "language": "Python",
+        "subject": "rotating square",
+        "function comments": "for easier future maintenance"
+      },
+      "output_design": [
+        "Python code",
+        "rotating square",
+        "functions include comments"
+      ],
+      "category": "paraphrase",
+      "technologies": {}
+    },
+    {
+      "prompt": "make it move slower and change its color as it rotates",
+      "output_overview": "Python code for a rotating square moving slower and changing color",
+      "output_specs": {
+        "language": "Python",
+        "output": "rotating square",
+        "animation": "slower movement and color changes as it rotates"
+      },
+      "output_design": [
+        "Python code",
+        "slower movement",
+        "color changes as it rotates"
+      ],
+      "category": "paraphrase",
+      "technologies": {}
+    },
+    {
+      "prompt": "Thank you for helping me out! Could you add the explanation you gave me at the end to the code itself in the form of comments?",
+      "output_overview": "Simple Python3 HTTPS file server allowing one client IP and single downloads",
+      "output_specs": {
+        "language": "Python3",
+        "protocol": "HTTPS",
+        "connections": "single connecting IP address only",
+        "unauthorized": "error page",
+        "downloads": "files served downloaded once",
+        "comments": "explanation added to code as comments"
+      },
+      "output_design": [
+        "waits for a connection",
+        "single connecting IP address",
+        "error page for other user",
+        "explanation comments in code"
+      ],
+      "category": "paraphrase",
+      "technologies": {}
+    },
+    {
+      "prompt": "Can you modify the script to handle cases where the function f is not given as a lambda expression but rather as a separate function definition?",
+      "output_overview": "Python script outputs derivative using Average Rate of Change Formula from user input",
+      "output_specs": {
+        "language": "Python",
+        "input": "user input",
+        "formula": "A(x) = f(b)-f(a) /(b-a)",
+        "function format": "separate function definition, not lambda expression"
+      },
+      "output_design": [
+        "user input",
+        "formula outputs derivative",
+        "separate function definition support"
+      ],
+      "category": "paraphrase",
+      "technologies": {
+        "express": "framework"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "random_test": 2291,
+  "concept_holdout": {
+    "holdout_techs": [
+      "kotlin"
+    ],
+    "test_count": 2,
+    "excluded_train": 3,
+    "clean_train": 18323
+  },
+  "context_reversal": {
+    "positive": 1083,
+    "negative": 200
+  },
+  "cross_language": {
+    "python": 758,
+    "r": 42,
+    "python 3": 22,
+    "go": 22,
+    "javascript": 16
+  },
+  "unseen_vocabulary": {
+    "unseen_count": 6,
+    "seen_count": 2285,
+    "unseen_techs": 24
+  }
+}

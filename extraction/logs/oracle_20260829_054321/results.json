@@ -1,0 +1,5 @@
+{
+  "experiments": [
+    {"name": "E6-A-Lightweight", "exit": 0}
+,
+    {"name": "E6-B-Lightweight", "exit": 1}

@@ -1,0 +1,20 @@
+[2026-08-29 05:42:21] Initial RAM: 21%
+[2026-08-29 05:42:21] ========================================
+[2026-08-29 05:42:21] START: E6-A-Lightweight
+[2026-08-29 05:42:21] RAM before: 21%
+[2026-08-29 05:42:21] ========================================
+2026-08-29 05:42:30,090 [INFO] __main__: Initial RAM usage: 23.2%
+2026-08-29 05:42:30,323 [INFO] __main__: Loading datasets...
+Traceback (most recent call last):
+  File "/home/ubuntu/sera_models/extraction/train_lightweight.py", line 282, in <module>
+    main()
+  File "/home/ubuntu/sera_models/extraction/train_lightweight.py", line 175, in main
+    train_records = load_aligned_records(
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/sera_models/extraction/train_lightweight.py", line 65, in load_aligned_records
+    with open(splits_path) as f:
+         ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/processed/splits.json'
+[2026-08-29 05:42:31] END: E6-A-Lightweight (exit=1)
+[2026-08-29 05:42:31] RAM after: 21%
+[2026-08-29 05:42:31] Cooldown 30s...

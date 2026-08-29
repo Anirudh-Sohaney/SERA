@@ -1,0 +1,15 @@
+{
+  "base_dataset_hash": "3d461dd8c2fb66dc9bab64e4cf6dbb68",
+  "augmentation_count": 2289,
+  "augmentation_categories": {
+    "NEGATIVE": 763,
+    "POSITIVE": 763,
+    "CONCISE": 763
+  },
+  "generation_method": "template_based_with_validation",
+  "validation_method": "substring_equality_check",
+  "rejected_count": 1296,
+  "accepted_count": 2289,
+  "random_seed": 42,
+  "augmentation_ratio": 0.1
+}
