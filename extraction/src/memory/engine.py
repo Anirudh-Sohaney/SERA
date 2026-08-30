@@ -34,11 +34,30 @@ class ProjectMemoryEngine:
         project_id: Unique identifier for this project.
     """
 
-    def __init__(self, project_id: str = "default") -> None:
-        """Initialize with empty state."""
+    def __init__(
+        self,
+        project_id: str = "default",
+        high_confidence_threshold: float = 0.9,
+        medium_confidence_threshold: float = 0.7,
+    ) -> None:
+        """Initialize with empty state.
+
+        Args:
+            project_id: Unique identifier for this project.
+            high_confidence_threshold: Minimum confidence for automatic lock.
+                Spans above this threshold are added directly to persistent memory.
+            medium_confidence_threshold: Minimum confidence to retain as candidate.
+                Spans between medium and high thresholds are retained but not
+                automatically locked — they require additional evidence (repeated
+                mention across turns) before being promoted to persistent memory.
+                Spans below this threshold are discarded entirely.
+        """
         self._state = ProjectState(project_id=project_id)
         self._audit_log = AuditLog()
         self._validator = StateValidator()
+        self._high_threshold = high_confidence_threshold
+        self._medium_threshold = medium_confidence_threshold
+        self._pending_candidates: List[MemoryCandidate] = []
 
     # ------------------------------------------------------------------
     # Public API
@@ -77,8 +96,54 @@ class ProjectMemoryEngine:
             turn_number=turn_number,
         )
 
+        # ── Confidence policy ──────────────────────────────────────
+        # Split candidates into three tiers:
+        #   HIGH   (>= high_threshold)   → process immediately
+        #   MEDIUM (>= medium_threshold) → retain as pending, require
+        #                                  repeated evidence before lock
+        #   LOW    (< medium_threshold)  → discard silently
+        high_candidates: List[MemoryCandidate] = []
+        medium_candidates: List[MemoryCandidate] = []
+
+        for cand in candidates:
+            if cand.confidence >= self._high_threshold:
+                high_candidates.append(cand)
+            elif cand.confidence >= self._medium_threshold:
+                medium_candidates.append(cand)
+            # else: LOW — discard
+
+        # Check pending candidates from previous turns for repeated evidence
+        promoted: List[MemoryCandidate] = []
+        still_pending: List[MemoryCandidate] = []
+        for pending in self._pending_candidates:
+            # Promote if same text+category seen again in this turn
+            found_repeat = any(
+                c.text.strip().lower() == pending.text.strip().lower()
+                and c.category == pending.category
+                for c in candidates
+            )
+            if found_repeat:
+                promoted.append(pending)
+            else:
+                still_pending.append(pending)
+
+        # Add newly promoted to high candidates
+        high_candidates.extend(promoted)
+
+        # Add current medium candidates to pending (if not already pending)
+        existing_pending_keys = {
+            (p.text.strip().lower(), p.category) for p in still_pending
+        }
+        for mc in medium_candidates:
+            key = (mc.text.strip().lower(), mc.category)
+            if key not in existing_pending_keys:
+                still_pending.append(mc)
+
+        self._pending_candidates = still_pending
+
+        # Process only high-confidence candidates
         transition_engine = TransitionEngine(self._state)
-        transitions = transition_engine.process_candidates(candidates)
+        transitions = transition_engine.process_candidates(high_candidates)
 
         all_validation_errors: List[Dict[str, Any]] = []
         any_invalid = False
@@ -130,6 +195,10 @@ class ProjectMemoryEngine:
             },
             "audit_records": self._audit_log.get_records_by_turn(turn_number),
             "validation_result": aggregated,
+            "pending_candidates": len(self._pending_candidates),
+            "high_candidates": len(high_candidates),
+            "medium_candidates": len(medium_candidates),
+            "discarded_low": len(candidates) - len(high_candidates) - len(medium_candidates),
         }
 
     def get_state(self) -> Dict[str, Any]:
