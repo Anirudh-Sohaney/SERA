@@ -1,0 +1,47 @@
+{
+  "experiment_id": "experiment_001",
+  "timestamp": "2026-08-30T10:55:04.558880",
+  "description": "Deterministic state engine baseline - 264 unit tests, 111 fixtures",
+  "model_checkpoint": "checkpoints/oracle_e6a/best/model.pt",
+  "rule_version": "1.0.0",
+  "categories": [
+    "project",
+    "language",
+    "framework",
+    "library",
+    "database",
+    "platform",
+    "deployment",
+    "architecture",
+    "directory",
+    "file",
+    "interface",
+    "input",
+    "output",
+    "constraint",
+    "requirement",
+    "design",
+    "tool",
+    "runtime",
+    "testing",
+    "configuration"
+  ],
+  "transition_types": [
+    "ADD",
+    "MODIFY",
+    "REMOVE",
+    "REJECT",
+    "NO_CHANGE"
+  ],
+  "modules": [
+    "schema",
+    "matcher",
+    "rules",
+    "transitions",
+    "validator",
+    "audit",
+    "engine",
+    "metrics",
+    "integration"
+  ]
+}
