@@ -1,0 +1,15 @@
+2026-08-29 10:31:12,458 [INFO] __main__: Initial RAM usage: 15.2%
+2026-08-29 10:31:12,760 [INFO] __main__: Loading datasets...
+2026-08-29 10:31:15,834 [INFO] __main__: Original training records: 18326
+2026-08-29 10:31:15,917 [INFO] __main__: Augmented records: 3667
+2026-08-29 10:31:15,918 [INFO] __main__: Combined training records: 21993
+2026-08-29 10:31:16,070 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-29 10:31:16,071 [WARNING] huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-29 10:31:16,091 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/bert_uncased_L-6_H-512_A-8/dd53ec6ca9d05e0a91b309c4e137f31988888071/config.json "HTTP/1.1 200 OK"
+2026-08-29 10:31:16,166 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-08-29 10:31:16,231 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-08-29 10:31:16,294 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/google/bert_uncased_L-6_H-512_A-8/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-29 10:31:16,363 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/google/bert_uncased_L-6_H-512_A-8/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-29 10:31:16,429 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-08-29 10:31:16,451 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/bert_uncased_L-6_H-512_A-8/dd53ec6ca9d05e0a91b309c4e137f31988888071/vocab.txt "HTTP/1.1 200 OK"

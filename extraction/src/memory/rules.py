@@ -130,13 +130,15 @@ DEFAULT_CONFLICT_PATTERNS: List[Dict[str, Any]] = [
 
 # Negation detection patterns — applied to the full prompt with {value}
 # substituted in.  Each pattern looks for a negation word in proximity to
-# the value.
+# the value.  We use {{0,N}} quantifier to limit distance and avoid
+# cross-clause matches (e.g. "do not use Flask. Use Django" should only
+# match Flask, not Django).
 DEFAULT_NEGATION_PATTERNS: List[str] = [
-    r"\bdon'?t\b.*{escaped_value}",
-    r"\bdo\s+not\b.*{escaped_value}",
-    r"\bnever\b.*{escaped_value}",
-    r"\bavoid\b.*{escaped_value}",
-    r"\bwithout\b.*{escaped_value}",
+    r"\bdon'?t\b[^\.\!?\n]{{0,50}}{escaped_value}",
+    r"\bdo\s+not\b[^\.\!?\n]{{0,50}}{escaped_value}",
+    r"\bnever\b[^\.\!?\n]{{0,50}}{escaped_value}",
+    r"\bavoid\b[^\.\!?\n]{{0,50}}{escaped_value}",
+    r"\bwithout\b[^\.\!?\n]{{0,50}}{escaped_value}",
 ]
 
 # Replacement detection patterns — capture groups: <old> and <new>.
@@ -398,7 +400,9 @@ class TransitionRuleEngine:
         """Classify a candidate with no match in the current state.
 
         If the prompt contains a negation for this value, the candidate
-        is REJECTED.  Otherwise it is a new ADD.
+        is REJECTED.  If a conflict pattern is detected, treat as ADD
+        (the transition engine will handle removing the old value).
+        Otherwise it is a new ADD.
 
         Args:
             candidate:   The candidate to classify.
@@ -415,6 +419,20 @@ class TransitionRuleEngine:
                 reason=(
                     f"Value '{candidate.text}' appears in a negation "
                     f"context in the prompt."
+                ),
+            )
+
+        # Check for conflict patterns (e.g. "actually", "switch to")
+        # If detected, this is a new value replacing an old one
+        conflict = self._detect_conflict(full_prompt)
+        if conflict is not None:
+            return RuleResult(
+                transition_type=TransitionType.ADD,
+                confidence=0.9,
+                rule_id="conflict_new_add",
+                reason=(
+                    f"Conflict pattern detected: {conflict['description']} "
+                    f"Candidate '{candidate.text}' is a new value."
                 ),
             )
 

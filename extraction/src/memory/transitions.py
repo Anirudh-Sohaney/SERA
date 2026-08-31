@@ -36,7 +36,7 @@ from src.memory.schema import (
     _now_iso,
 )
 from src.memory.matcher import MatchResult, StateMatcher
-from src.memory.rules import TransitionRuleEngine
+from src.memory.rules import TransitionRuleEngine, detect_replacement_context, detect_negation_context
 
 
 # ---------------------------------------------------------------------------
@@ -73,7 +73,6 @@ KNOWN_FRAMEWORKS: set = {
     "pandas", "numpy", "scipy", "matplotlib", "seaborn", "plotly",
     "langchain", "llamaindex", "openai", "anthropic", "transformers",
     "celery", "redis", "rabbitmq", "kafka",
-    "docker", "docker-compose", "kubernetes", "k8s", "helm",
     "terraform", "ansible", "pulumi", "cdk",
     "nginx", "apache", "caddy", "traefik",
     "grafana", "prometheus", "datadog", "newrelic", "sentry",
@@ -92,6 +91,24 @@ KNOWN_FRAMEWORKS: set = {
     "poetry", "pipenv", "conda", "virtualenv", "venv",
     "npm", "yarn", "pnpm", "bun",
     "cargo", "pip", "gem", "brew",
+}
+
+KNOWN_TOOLS: set = {
+    "docker", "docker-compose", "dockerhub",
+    "kubernetes", "k8s", "helm",
+    "terraform", "ansible", "pulumi", "cdk",
+    "jenkins", "github actions", "gitlab ci", "circleci", "travis",
+    "gitpod", "codespaces",
+    "make", "cmake", "gradle", "maven", "ant",
+    "webpack", "vite", "esbuild", "rollup", "parcel", "turbopack",
+    "babel", "postcss", "sass", "less",
+    "eslint", "prettier", "black", "ruff", "flake8", "mypy", "pylint",
+    "pytest", "jest", "vitest", "mocha", "cypress", "playwright",
+    "curl", "wget", "httpie", "postman",
+    "git", "svn", "hg",
+    "vim", "neovim", "emacs", "vscode", "intellij",
+    "gdb", "valgrind", "strace",
+    "redis-cli", "psql", "mysql", "mongosh",
 }
 
 KNOWN_DATABASES: set = {
@@ -153,12 +170,23 @@ def _infer_category_from_text(text: str) -> MemoryCategory:
 
     if lower in KNOWN_LANGUAGES:
         return MemoryCategory.LANGUAGE
+    if lower in KNOWN_TOOLS:
+        return MemoryCategory.TOOL
     if lower in KNOWN_FRAMEWORKS:
         return MemoryCategory.FRAMEWORK
     if lower in KNOWN_DATABASES:
         return MemoryCategory.DATABASE
     if lower in KNOWN_PLATFORMS:
         return MemoryCategory.PLATFORM
+
+    # Project name heuristic: CamelCase or PascalCase without spaces
+    # and doesn't match any known technology
+    if (len(text) > 1 and 
+        text[0].isupper() and 
+        not text.isupper() and  # Not all caps (like AWS)
+        ' ' not in text and
+        not re.search(r'[0-9]', text)):  # No digits
+        return MemoryCategory.PROJECT
 
     return MemoryCategory.REQUIREMENT
 
@@ -334,6 +362,68 @@ class TransitionEngine:
         if not candidates:
             return []
 
+        # Step 0: Check for replacement patterns in the prompt
+        # If detected, create a synthetic REMOVE transition for the old value
+        replacement_transitions: List[Transition] = []
+        removed_values: set = set()
+        if candidates and candidates[0].prompt_text:
+            prompt_text = candidates[0].prompt_text
+            
+            # Check for explicit replacement patterns
+            replacement = detect_replacement_context(prompt_text)
+            if replacement is not None:
+                old_value = replacement["old_value"].rstrip('.')  # Remove trailing punctuation
+                removed_values.add(old_value.lower())
+                # Find and remove the old value from state
+                for mem in list(self._state.active_memories):
+                    if (mem.value.lower() == old_value.lower() or 
+                        old_value.lower() in mem.value.lower() or
+                        mem.value.lower() in old_value.lower()):
+                        turn = candidates[0].turn_number or self._state.current_turn
+                        transition = self._state.remove_memory(
+                            memory_id=mem.memory_id,
+                            turn=turn,
+                        )
+                        if transition is not None:
+                            replacement_transitions.append(transition)
+            
+            # Check for explicit replacement patterns that imply removal
+            # Only "Replace X with Y" and "Use X instead of Y" patterns
+            # trigger removal. Other patterns like "switch to" or bare
+            # "actually" do NOT imply removal — they just signal a change.
+            conflict_patterns = [
+                (r"\breplace\s+\w+\s+with\b", ["replace"]),
+                (r"\binstead\s+of\b", ["instead of"]),
+            ]
+            new_values = {c.text.lower() for c in candidates}
+            new_categories = {c.category for c in candidates}
+            for pattern, keywords in conflict_patterns:
+                if re.search(pattern, prompt_text, re.IGNORECASE):
+                    # Remove existing memories that are:
+                    # 1. In the SAME category as new candidates
+                    # 2. NOT in the new candidates (exact or partial match)
+                    for mem in list(self._state.active_memories):
+                        if mem.category not in new_categories:
+                            continue  # Don't touch other categories
+                        is_in_new_values = mem.value.lower() in new_values
+                        is_partial_match = any(
+                            mem.value.lower() in nv or nv in mem.value.lower()
+                            for nv in new_values
+                        )
+                        if not is_in_new_values and not is_partial_match:
+                            removed_values.add(mem.value.lower())
+                            turn = candidates[0].turn_number or self._state.current_turn
+                            transition = self._state.remove_memory(
+                                memory_id=mem.memory_id,
+                                turn=turn,
+                            )
+                            if transition is not None:
+                                replacement_transitions.append(transition)
+                    break  # Only apply first matching conflict pattern
+
+        # Filter out candidates that match removed values
+        candidates = [c for c in candidates if c.text.lower() not in removed_values]
+
         # Step 1: Match all candidates
         match_results = self._matcher.find_matches(candidates)
 
@@ -366,7 +456,8 @@ class TransitionEngine:
             if transition is not None:
                 transitions.append(transition)
 
-        return transitions
+        # Prepend replacement transitions (REMOVE of old value)
+        return replacement_transitions + transitions
 
     # ------------------------------------------------------------------
     # Internal: apply a single transition

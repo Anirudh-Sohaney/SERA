@@ -1,0 +1,21 @@
+{
+  "count": 4306,
+  "category_distribution": {
+    "requirement": 4035,
+    "language": 210,
+    "directory": 32,
+    "framework": 19,
+    "platform": 7,
+    "database": 2,
+    "file": 1
+  },
+  "position_distribution": {
+    "start": 2074,
+    "middle": 1306,
+    "end": 926
+  },
+  "type_counts": {
+    "technology": 304,
+    "description": 852
+  }
+}

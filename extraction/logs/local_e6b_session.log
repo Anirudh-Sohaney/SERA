@@ -1,0 +1,18 @@
+Script started on 2026-08-29 10:38:39-05:00 [COMMAND="python3 -u train_lightweight.py --output-dir checkpoints/local_e6b --augmented-data data/processed/e6_augmented_20pct.jsonl --batch-size 32 --gradient-accumulation 2 --epochs 2 --max-val 300" <not executed on terminal>]
+2026-08-29 10:38:47,547 [INFO] __main__: Initial RAM usage: 15.0%
+2026-08-29 10:38:47,856 [INFO] __main__: Loading datasets...
+2026-08-29 10:38:50,865 [INFO] __main__: Original training records: 18326
+2026-08-29 10:38:50,967 [INFO] __main__: Augmented records: 3667
+2026-08-29 10:38:50,968 [INFO] __main__: Combined training records: 21993
+2026-08-29 10:38:51,119 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-29 10:38:51,120 [WARNING] huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-29 10:38:51,143 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/bert_uncased_L-6_H-512_A-8/dd53ec6ca9d05e0a91b309c4e137f31988888071/config.json "HTTP/1.1 200 OK"
+2026-08-29 10:38:51,214 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-08-29 10:38:51,282 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-08-29 10:38:51,349 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/google/bert_uncased_L-6_H-512_A-8/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-29 10:38:51,418 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/google/bert_uncased_L-6_H-512_A-8/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-29 10:38:51,482 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-08-29 10:38:51,502 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/bert_uncased_L-6_H-512_A-8/dd53ec6ca9d05e0a91b309c4e137f31988888071/vocab.txt "HTTP/1.1 200 OK"
+
+Script done on 2026-08-29 10:39:26-05:00 [COMMAND_EXIT_CODE="0"]

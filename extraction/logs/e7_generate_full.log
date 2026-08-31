@@ -1,0 +1,64 @@
+2026-08-29 14:52:56,231 [INFO] __main__: ============================================================
+2026-08-29 14:52:56,231 [INFO] __main__: STEP 1: Generating Stage-2 training data
+2026-08-29 14:52:56,232 [INFO] __main__: ============================================================
+2026-08-29 14:52:58,216 [INFO] src.data.span_filter_dataset: Loaded 18326 train, 2291 val records
+2026-08-29 14:52:58,373 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-29 14:52:58,393 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/bert_uncased_L-6_H-512_A-8/dd53ec6ca9d05e0a91b309c4e137f31988888071/config.json "HTTP/1.1 200 OK"
+2026-08-29 14:52:58,726 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-29 14:52:58,727 [WARNING] huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-29 14:52:58,812 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/google/bert_uncased_L-6_H-512_A-8 "HTTP/1.1 200 OK"
+2026-08-29 14:52:59,110 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/google/bert_uncased_L-6_H-512_A-8/commits/main "HTTP/1.1 200 OK"
+2026-08-29 14:52:59,205 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/google/bert_uncased_L-6_H-512_A-8/discussions?p=0 "HTTP/1.1 200 OK"
+2026-08-29 14:52:59,361 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/google/bert_uncased_L-6_H-512_A-8/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 5861.07it/s]
+2026-08-29 14:52:59,430 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+[transformers] [1mBertModel LOAD REPORT[0m from: google/bert_uncased_L-6_H-512_A-8
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.decoder.bias               | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-08-29 14:52:59,499 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+2026-08-29 14:52:59,621 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-29 14:52:59,641 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/bert_uncased_L-6_H-512_A-8/dd53ec6ca9d05e0a91b309c4e137f31988888071/config.json "HTTP/1.1 200 OK"
+2026-08-29 14:52:59,708 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-08-29 14:52:59,777 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-08-29 14:52:59,844 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/google/bert_uncased_L-6_H-512_A-8/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-29 14:52:59,914 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/google/bert_uncased_L-6_H-512_A-8/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-29 14:52:59,974 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-08-29 14:52:59,994 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/bert_uncased_L-6_H-512_A-8/dd53ec6ca9d05e0a91b309c4e137f31988888071/vocab.txt "HTTP/1.1 200 OK"
+2026-08-29 14:53:00,060 [INFO] src.models.token_classifier: Frozen encoder embeddings
+2026-08-29 14:53:00,632 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-29 14:53:00,652 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/bert_uncased_L-6_H-512_A-8/dd53ec6ca9d05e0a91b309c4e137f31988888071/config.json "HTTP/1.1 200 OK"
+2026-08-29 14:53:00,719 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-08-29 14:53:00,789 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-08-29 14:53:00,861 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/google/bert_uncased_L-6_H-512_A-8/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-29 14:53:00,936 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/google/bert_uncased_L-6_H-512_A-8/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-29 14:53:01,003 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/google/bert_uncased_L-6_H-512_A-8/resolve/main/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-08-29 14:53:01,023 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/bert_uncased_L-6_H-512_A-8/dd53ec6ca9d05e0a91b309c4e137f31988888071/vocab.txt "HTTP/1.1 200 OK"
+2026-08-29 14:53:34,816 [INFO] src.data.span_filter_dataset: Processing 18326 records in batches...
+2026-08-29 14:53:36,969 [INFO] src.data.span_filter_dataset:   Processed 0/18326 records, 776 examples so far
+2026-08-29 14:57:56,626 [INFO] src.data.span_filter_dataset:   Processed 8000/18326 records, 103034 examples so far
+2026-08-29 15:02:18,783 [INFO] src.data.span_filter_dataset:   Processed 16000/18326 records, 212008 examples so far
+2026-08-29 15:03:31,593 [INFO] src.data.span_filter_dataset: Total examples generated: 242495
+2026-08-29 15:03:36,862 [INFO] src.data.span_filter_dataset: Processing 2291 records in batches...
+2026-08-29 15:03:38,916 [INFO] src.data.span_filter_dataset:   Processed 0/2291 records, 696 examples so far
+2026-08-29 15:04:51,091 [INFO] src.data.span_filter_dataset: Total examples generated: 30293
+2026-08-29 15:04:54,287 [INFO] src.data.span_filter_dataset: Generated Stage-2 training data:
+2026-08-29 15:04:54,287 [INFO] src.data.span_filter_dataset:   Train: 120486 (60243 pos, 60243 neg)
+2026-08-29 15:04:54,288 [INFO] src.data.span_filter_dataset:   Val: 30293 (7487 pos, 22806 neg)
+2026-08-29 15:04:54,900 [INFO] __main__: Stage-2 data generated:
+2026-08-29 15:04:54,901 [INFO] __main__:   Train: 120486 (60243 pos, 60243 neg)
+2026-08-29 15:04:54,901 [INFO] __main__:   Val: 30293 (7487 pos, 22806 neg)
+2026-08-29 15:04:54,901 [INFO] __main__:   Negative categories: {'OTHER': 47181, 'DATA_TYPE': 2125, 'COMMON_WORD': 4898, 'DESCRIPTION_FRAGMENT': 453, 'FUNCTION_SIGNATURE': 1510, 'INPUT_OUTPUT_SPEC': 3500, 'CODE_SYNTAX': 272, 'ACTION_VERB': 304}
+2026-08-29 15:04:54,903 [INFO] __main__: E7 training complete!

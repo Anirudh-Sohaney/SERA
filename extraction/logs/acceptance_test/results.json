@@ -1,0 +1,759 @@
+{
+  "total": 14,
+  "passed": 14,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "category_results": {
+    "explicit_requirements": {
+      "passed": 2,
+      "failed": 0,
+      "total": 2
+    },
+    "technology_rejection": {
+      "passed": 1,
+      "failed": 0,
+      "total": 1
+    },
+    "technology_replacement": {
+      "passed": 1,
+      "failed": 0,
+      "total": 1
+    },
+    "multi_turn_updates": {
+      "passed": 1,
+      "failed": 0,
+      "total": 1
+    },
+    "no_memory_change": {
+      "passed": 1,
+      "failed": 0,
+      "total": 1
+    },
+    "hypothetical_statements": {
+      "passed": 1,
+      "failed": 0,
+      "total": 1
+    },
+    "casual_conversation": {
+      "passed": 1,
+      "failed": 0,
+      "total": 1
+    },
+    "non_project_coding": {
+      "passed": 1,
+      "failed": 0,
+      "total": 1
+    },
+    "project_names": {
+      "passed": 1,
+      "failed": 0,
+      "total": 1
+    },
+    "directory_structures": {
+      "passed": 1,
+      "failed": 0,
+      "total": 1
+    },
+    "language_selection": {
+      "passed": 1,
+      "failed": 0,
+      "total": 1
+    },
+    "deployment_decisions": {
+      "passed": 1,
+      "failed": 0,
+      "total": 1
+    },
+    "contradictions": {
+      "passed": 1,
+      "failed": 0,
+      "total": 1
+    }
+  },
+  "details": [
+    {
+      "name": "explicit_python_requirement",
+      "category": "explicit_requirements",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [
+            {
+              "type": "ADD",
+              "category": "language",
+              "value": "Python"
+            }
+          ],
+          "active_memories": 1
+        }
+      ],
+      "actual_memories": [
+        {
+          "category": "language",
+          "value": "Python"
+        }
+      ],
+      "expected_memories": [
+        {
+          "category": "language",
+          "value": "Python"
+        }
+      ],
+      "matching": [
+        {
+          "category": "language",
+          "value": "python"
+        }
+      ],
+      "missing": [],
+      "extra": [],
+      "description": "System must extract explicit technology requirement"
+    },
+    {
+      "name": "explicit_framework_requirement",
+      "category": "explicit_requirements",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [
+            {
+              "type": "ADD",
+              "category": "framework",
+              "value": "FastAPI"
+            }
+          ],
+          "active_memories": 1
+        }
+      ],
+      "actual_memories": [
+        {
+          "category": "framework",
+          "value": "FastAPI"
+        }
+      ],
+      "expected_memories": [
+        {
+          "category": "framework",
+          "value": "FastAPI"
+        }
+      ],
+      "matching": [
+        {
+          "category": "framework",
+          "value": "fastapi"
+        }
+      ],
+      "missing": [],
+      "extra": [],
+      "description": "System must extract framework requirement"
+    },
+    {
+      "name": "technology_rejection",
+      "category": "technology_rejection",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [
+            {
+              "type": "ADD",
+              "category": "framework",
+              "value": "Flask"
+            }
+          ],
+          "active_memories": 1
+        },
+        {
+          "turn": 2,
+          "transitions": [
+            {
+              "type": "REMOVE",
+              "category": "framework",
+              "value": "Flask"
+            },
+            {
+              "type": "ADD",
+              "category": "framework",
+              "value": "Django"
+            }
+          ],
+          "active_memories": 1
+        }
+      ],
+      "actual_memories": [
+        {
+          "category": "framework",
+          "value": "Django"
+        }
+      ],
+      "expected_memories": [
+        {
+          "category": "framework",
+          "value": "Django"
+        }
+      ],
+      "matching": [
+        {
+          "category": "framework",
+          "value": "django"
+        }
+      ],
+      "missing": [],
+      "extra": [],
+      "description": "System must handle technology replacement across turns"
+    },
+    {
+      "name": "technology_replacement",
+      "category": "technology_replacement",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [
+            {
+              "type": "ADD",
+              "category": "database",
+              "value": "SQLite"
+            }
+          ],
+          "active_memories": 1
+        },
+        {
+          "turn": 2,
+          "transitions": [
+            {
+              "type": "REMOVE",
+              "category": "database",
+              "value": "SQLite"
+            },
+            {
+              "type": "ADD",
+              "category": "database",
+              "value": "PostgreSQL"
+            }
+          ],
+          "active_memories": 1
+        }
+      ],
+      "actual_memories": [
+        {
+          "category": "database",
+          "value": "PostgreSQL"
+        }
+      ],
+      "expected_memories": [
+        {
+          "category": "database",
+          "value": "PostgreSQL"
+        }
+      ],
+      "matching": [
+        {
+          "category": "database",
+          "value": "postgresql"
+        }
+      ],
+      "missing": [],
+      "extra": [],
+      "description": "System must replace SQLite with PostgreSQL"
+    },
+    {
+      "name": "multi_turn_accumulation",
+      "category": "multi_turn_updates",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [
+            {
+              "type": "ADD",
+              "category": "language",
+              "value": "Python"
+            }
+          ],
+          "active_memories": 1
+        },
+        {
+          "turn": 2,
+          "transitions": [
+            {
+              "type": "ADD",
+              "category": "framework",
+              "value": "FastAPI"
+            }
+          ],
+          "active_memories": 2
+        },
+        {
+          "turn": 3,
+          "transitions": [
+            {
+              "type": "ADD",
+              "category": "database",
+              "value": "PostgreSQL"
+            }
+          ],
+          "active_memories": 3
+        }
+      ],
+      "actual_memories": [
+        {
+          "category": "language",
+          "value": "Python"
+        },
+        {
+          "category": "framework",
+          "value": "FastAPI"
+        },
+        {
+          "category": "database",
+          "value": "PostgreSQL"
+        }
+      ],
+      "expected_memories": [
+        {
+          "category": "language",
+          "value": "Python"
+        },
+        {
+          "category": "framework",
+          "value": "FastAPI"
+        },
+        {
+          "category": "database",
+          "value": "PostgreSQL"
+        }
+      ],
+      "matching": [
+        {
+          "category": "language",
+          "value": "python"
+        },
+        {
+          "category": "framework",
+          "value": "fastapi"
+        },
+        {
+          "category": "database",
+          "value": "postgresql"
+        }
+      ],
+      "missing": [],
+      "extra": [],
+      "description": "System must accumulate facts across turns"
+    },
+    {
+      "name": "no_memory_change",
+      "category": "no_memory_change",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [
+            {
+              "type": "ADD",
+              "category": "language",
+              "value": "Python"
+            }
+          ],
+          "active_memories": 1
+        },
+        {
+          "turn": 2,
+          "transitions": [],
+          "active_memories": 1
+        }
+      ],
+      "actual_memories": [
+        {
+          "category": "language",
+          "value": "Python"
+        }
+      ],
+      "expected_memories": [
+        {
+          "category": "language",
+          "value": "Python"
+        }
+      ],
+      "matching": [
+        {
+          "category": "language",
+          "value": "python"
+        }
+      ],
+      "missing": [],
+      "extra": [],
+      "description": "System must not change memory for non-project prompts"
+    },
+    {
+      "name": "hypothetical_no_lock",
+      "category": "hypothetical_statements",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [],
+          "active_memories": 0
+        }
+      ],
+      "actual_memories": [],
+      "expected_memories": [],
+      "matching": [],
+      "missing": [],
+      "extra": [],
+      "description": "System should NOT lock hypothetical decisions (spans present but admission should reject)"
+    },
+    {
+      "name": "casual_no_extraction",
+      "category": "casual_conversation",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [],
+          "active_memories": 0
+        }
+      ],
+      "actual_memories": [],
+      "expected_memories": [],
+      "matching": [],
+      "missing": [],
+      "extra": [],
+      "description": "System must not extract from casual conversation"
+    },
+    {
+      "name": "non_project_coding",
+      "category": "non_project_coding",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [],
+          "active_memories": 0
+        }
+      ],
+      "actual_memories": [],
+      "expected_memories": [],
+      "matching": [],
+      "missing": [],
+      "extra": [],
+      "description": "System must not extract from non-project coding questions"
+    },
+    {
+      "name": "project_name_extraction",
+      "category": "project_names",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [
+            {
+              "type": "ADD",
+              "category": "project",
+              "value": "DataPipeline"
+            },
+            {
+              "type": "ADD",
+              "category": "language",
+              "value": "Python"
+            },
+            {
+              "type": "ADD",
+              "category": "database",
+              "value": "PostgreSQL"
+            }
+          ],
+          "active_memories": 3
+        }
+      ],
+      "actual_memories": [
+        {
+          "category": "project",
+          "value": "DataPipeline"
+        },
+        {
+          "category": "language",
+          "value": "Python"
+        },
+        {
+          "category": "database",
+          "value": "PostgreSQL"
+        }
+      ],
+      "expected_memories": [
+        {
+          "category": "project",
+          "value": "DataPipeline"
+        },
+        {
+          "category": "language",
+          "value": "Python"
+        },
+        {
+          "category": "database",
+          "value": "PostgreSQL"
+        }
+      ],
+      "matching": [
+        {
+          "category": "database",
+          "value": "postgresql"
+        },
+        {
+          "category": "language",
+          "value": "python"
+        },
+        {
+          "category": "project",
+          "value": "datapipeline"
+        }
+      ],
+      "missing": [],
+      "extra": [],
+      "description": "System must extract project name alongside technologies"
+    },
+    {
+      "name": "directory_structure",
+      "category": "directory_structures",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [
+            {
+              "type": "ADD",
+              "category": "directory",
+              "value": "src/"
+            },
+            {
+              "type": "ADD",
+              "category": "directory",
+              "value": "tests/"
+            }
+          ],
+          "active_memories": 2
+        }
+      ],
+      "actual_memories": [
+        {
+          "category": "directory",
+          "value": "src/"
+        },
+        {
+          "category": "directory",
+          "value": "tests/"
+        }
+      ],
+      "expected_memories": [
+        {
+          "category": "directory",
+          "value": "src/"
+        },
+        {
+          "category": "directory",
+          "value": "tests/"
+        }
+      ],
+      "matching": [
+        {
+          "category": "directory",
+          "value": "src/"
+        },
+        {
+          "category": "directory",
+          "value": "tests/"
+        }
+      ],
+      "missing": [],
+      "extra": [],
+      "description": "System must extract directory structure"
+    },
+    {
+      "name": "multiple_languages",
+      "category": "language_selection",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [
+            {
+              "type": "ADD",
+              "category": "language",
+              "value": "Python"
+            },
+            {
+              "type": "ADD",
+              "category": "language",
+              "value": "JavaScript"
+            }
+          ],
+          "active_memories": 2
+        }
+      ],
+      "actual_memories": [
+        {
+          "category": "language",
+          "value": "Python"
+        },
+        {
+          "category": "language",
+          "value": "JavaScript"
+        }
+      ],
+      "expected_memories": [
+        {
+          "category": "language",
+          "value": "Python"
+        },
+        {
+          "category": "language",
+          "value": "JavaScript"
+        }
+      ],
+      "matching": [
+        {
+          "category": "language",
+          "value": "python"
+        },
+        {
+          "category": "language",
+          "value": "javascript"
+        }
+      ],
+      "missing": [],
+      "extra": [],
+      "description": "System must handle multiple languages in same prompt"
+    },
+    {
+      "name": "deployment_decision",
+      "category": "deployment_decisions",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [
+            {
+              "type": "ADD",
+              "category": "platform",
+              "value": "AWS"
+            },
+            {
+              "type": "ADD",
+              "category": "tool",
+              "value": "Docker"
+            },
+            {
+              "type": "ADD",
+              "category": "tool",
+              "value": "Kubernetes"
+            }
+          ],
+          "active_memories": 3
+        }
+      ],
+      "actual_memories": [
+        {
+          "category": "platform",
+          "value": "AWS"
+        },
+        {
+          "category": "tool",
+          "value": "Docker"
+        },
+        {
+          "category": "tool",
+          "value": "Kubernetes"
+        }
+      ],
+      "expected_memories": [
+        {
+          "category": "platform",
+          "value": "AWS"
+        },
+        {
+          "category": "tool",
+          "value": "Docker"
+        },
+        {
+          "category": "tool",
+          "value": "Kubernetes"
+        }
+      ],
+      "matching": [
+        {
+          "category": "tool",
+          "value": "docker"
+        },
+        {
+          "category": "platform",
+          "value": "aws"
+        },
+        {
+          "category": "tool",
+          "value": "kubernetes"
+        }
+      ],
+      "missing": [],
+      "extra": [],
+      "description": "System must extract deployment stack"
+    },
+    {
+      "name": "contradiction_handling",
+      "category": "contradictions",
+      "passed": true,
+      "turns": [
+        {
+          "turn": 1,
+          "transitions": [
+            {
+              "type": "ADD",
+              "category": "framework",
+              "value": "React"
+            }
+          ],
+          "active_memories": 1
+        },
+        {
+          "turn": 2,
+          "transitions": [
+            {
+              "type": "REMOVE",
+              "category": "framework",
+              "value": "React"
+            },
+            {
+              "type": "ADD",
+              "category": "framework",
+              "value": "Vue"
+            }
+          ],
+          "active_memories": 1
+        }
+      ],
+      "actual_memories": [
+        {
+          "category": "framework",
+          "value": "Vue"
+        }
+      ],
+      "expected_memories": [
+        {
+          "category": "framework",
+          "value": "Vue"
+        }
+      ],
+      "matching": [
+        {
+          "category": "framework",
+          "value": "vue"
+        }
+      ],
+      "missing": [],
+      "extra": [],
+      "description": "System must handle explicit contradiction"
+    }
+  ]
+}

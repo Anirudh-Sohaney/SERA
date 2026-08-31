@@ -1,0 +1,15 @@
+{
+  "total_examples": 1466,
+  "hard_negatives": 657,
+  "description_negatives": 476,
+  "negation_pairs": 500,
+  "boundary_examples": 300,
+  "validation_errors": 425,
+  "duplicates_removed": 42,
+  "category_distribution": {
+    "existing_zero_span": 631,
+    "description_negative": 475,
+    "negation_pair": 75,
+    "boundary_example": 285
+  }
+}

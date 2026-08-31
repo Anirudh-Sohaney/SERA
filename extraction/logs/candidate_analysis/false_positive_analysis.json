@@ -1,0 +1,35 @@
+{
+  "count": 28815,
+  "confidence_distribution": {
+    "mean": 0.7244340075619617,
+    "median": 0.7278696894645691,
+    "std": 0.13561032884372284,
+    "p25": 0.6197666227817535,
+    "p75": 0.8311375752091408
+  },
+  "category_distribution": {
+    "requirement": 28424,
+    "language": 254,
+    "directory": 65,
+    "framework": 59,
+    "platform": 9,
+    "database": 4
+  },
+  "position_distribution": {
+    "start": 14698,
+    "middle": 8213,
+    "end": 5904
+  },
+  "type_counts": {
+    "technology": 646,
+    "description": 3318,
+    "code_syntax": 2460,
+    "negated": 205
+  },
+  "length_distribution": {
+    "single_word": 14163,
+    "short_2_3": 10827,
+    "medium_4_6": 3482,
+    "long_7_plus": 343
+  }
+}

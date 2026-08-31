@@ -1,0 +1,9 @@
+{
+  "total_candidates": 32164,
+  "total_gold_spans": 7598,
+  "true_positives": 3349,
+  "false_positives": 28815,
+  "false_negatives": 4306,
+  "precision": 0.10412262156448203,
+  "recall": 0.4374918354016982
+}
